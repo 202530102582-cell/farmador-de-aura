@@ -1,31 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Loja de Roupas</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f7f3">
+  <meta name="description" content="Conheça a coleção Farmador de Aura: peças selecionadas com simplicidade, conforto e personalidade.">
+  <title>Farmador de Aura — Peças com essência</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <div class="announcement">Peças escolhidas com cuidado · Descubra sua próxima favorita</div>
 
-    <h1>Loja de Roupas</h1>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#" aria-label="Farmador de Aura, início">
+        <span class="brand-mark" aria-hidden="true">a.</span>
+        <span class="brand-name"><strong>AURA</strong><span>essenciais para você</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="#colecao">Coleção</a>
+        <a href="#sobre">Nossa essência</a>
+        <a href="#cadastro">Cadastrar produto</a>
+      </nav>
+      <a class="header-cta" href="#colecao">Ver produtos <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
 
-    <h2>Cadastrar produto</h2>
+  <main>
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <div class="hero-panel">
+        <div class="hero-copy">
+          <span class="eyebrow">Menos, melhor</span>
+          <h1 id="hero-title">O essencial.<br><em>Do seu jeito.</em></h1>
+          <p>Uma seleção de peças para acompanhar a sua rotina com conforto, personalidade e simplicidade.</p>
+          <a class="button-primary" href="#colecao">Explorar coleção <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="hero-art" aria-label="Composição abstrata em tons naturais" role="img">
+          <span class="art-circle" aria-hidden="true"></span>
+          <span class="art-caption">Simplicidade com intenção</span>
+        </div>
+      </div>
+    </section>
 
-    <input id="nome" placeholder="Nome do produto">
+    <section class="wrap values" aria-label="Valores da loja">
+      <div class="value-item">
+        <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3 4.5 6v5.5c0 4.5 3.1 7.5 7.5 9.5 4.4-2 7.5-5 7.5-9.5V6L12 3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <div><strong>Escolha consciente</strong><span>Detalhes que fazem diferença</span></div>
+      </div>
+      <div class="value-item">
+        <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12a8 8 0 1 0 2.3-5.7L4 8.5"/><path d="M4 4v4.5h4.5"/></svg></span>
+        <div><strong>Estilo atemporal</strong><span>Peças para além das tendências</span></div>
+      </div>
+      <div class="value-item">
+        <span class="value-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20.8 8.8c0 5.2-8.8 11-8.8 11S3.2 14 3.2 8.8A4.8 4.8 0 0 1 12 6.1a4.8 4.8 0 0 1 8.8 2.7Z"/></svg></span>
+        <div><strong>Feito para você</strong><span>Encontre algo que combine</span></div>
+      </div>
+    </section>
 
-    <button onclick="salvar()">
-        Salvar
-    </button>
+    <section class="collection wrap" id="colecao" aria-labelledby="collection-title">
+      <div class="section-top">
+        <div>
+          <span class="eyebrow">Nossa seleção</span>
+          <h2 id="collection-title">Peças em destaque</h2>
+          <p>Veja os detalhes e encontre sua próxima favorita.</p>
+        </div>
+        <div class="collection-tools">
+          <label class="visually-hidden" for="busca">Buscar produto</label>
+          <input class="search-field" id="busca" type="search" placeholder="Buscar produtos..." autocomplete="off">
+          <label class="visually-hidden" for="ordenacao">Ordenar produtos</label>
+          <select class="sort-select" id="ordenacao">
+            <option value="recentes">Mais recentes</option>
+            <option value="nome">Nome A–Z</option>
+            <option value="menor-preco">Menor preço</option>
+            <option value="maior-preco">Maior preço</option>
+          </select>
+        </div>
+      </div>
+      <p class="product-count" id="contagem" aria-live="polite">Carregando produtos…</p>
+      <div class="product-grid" id="lista" aria-live="polite">
+        <div class="loading-state">Preparando a coleção…</div>
+      </div>
+    </section>
 
-    <p id="mensagem"></p>
+    <section class="about" id="sobre">
+      <div class="wrap about-inner">
+        <div>
+          <span class="eyebrow">Nossa essência</span>
+          <h2>O bom design<br>deixa espaço para você.</h2>
+          <p>Acreditamos que uma boa escolha começa nos detalhes. Por isso, esta vitrine foi pensada para mostrar cada produto com clareza — imagem, nome, descrição e preço, sem excesso de informação.</p>
+        </div>
+        <div class="about-note">“O essencial não precisa chamar atenção. Precisa fazer sentido.”</div>
+      </div>
+    </section>
 
-    <h2>Produtos cadastrados</h2>
+    <section class="collection wrap" id="cadastro" aria-labelledby="cadastro-title">
+      <div class="section-top">
+        <div>
+          <span class="eyebrow">Área de catálogo</span>
+          <h2 id="cadastro-title">Cadastrar produto</h2>
+          <p>Adicione as informações que vão aparecer na vitrine.</p>
+        </div>
+      </div>
+      <form class="product-form" id="form-produto">
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="nome">Nome do produto *</label>
+            <input id="nome" name="nome" type="text" maxlength="120" placeholder="Ex.: Camisa de algodão" required>
+          </div>
+          <div class="form-field">
+            <label for="preco">Preço (R$) *</label>
+            <input id="preco" name="preco" type="number" min="0.01" step="0.01" placeholder="0,00" required>
+          </div>
+          <div class="form-field form-field-wide">
+            <label for="imagem_url">Link da imagem</label>
+            <input id="imagem_url" name="imagem_url" type="url" maxlength="2048" placeholder="https://exemplo.com/imagem.jpg">
+            <span class="field-help">Use um link público direto para a imagem do produto.</span>
+          </div>
+          <div class="form-field form-field-wide">
+            <label for="descricao">Descrição *</label>
+            <textarea id="descricao" name="descricao" maxlength="600" rows="4" placeholder="Descreva material, caimento, tamanho ou outros detalhes importantes." required></textarea>
+          </div>
+        </div>
+        <div class="form-actions">
+          <p id="mensagem" class="form-message" role="status" aria-live="polite"></p>
+          <button class="button-primary" id="salvar" type="submit">Salvar produto <span aria-hidden="true">→</span></button>
+        </div>
+      </form>
+    </section>
+  </main>
 
-    <ul id="lista"></ul>
-
-    <script src="script.js"></script>
-
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <a class="brand" href="#" aria-label="Aura, voltar ao início">
+        <span class="brand-mark" aria-hidden="true">a.</span>
+        <span class="brand-name"><strong>AURA</strong><span>essenciais para você</span></span>
+      </a>
+      <span class="footer-copy">© <span id="ano"></span> Farmador de Aura. Feito com cuidado.</span>
+      <div class="footer-links"><a href="#colecao">Coleção</a><a href="#sobre">Sobre</a><a href="#cadastro">Cadastrar</a></div>
+    </div>
+  </footer>
+  <script src="script.js" defer></script>
 </body>
-
 </html>
